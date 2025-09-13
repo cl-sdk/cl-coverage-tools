@@ -1,6 +1,6 @@
 # cl-coverage-tools
 
-![cl-coverage-tools](https://github.com/cl-sdk/cl-coverage-tools/blob/main/extra/logo.png?raw=true "cl-coverage-tools")
+![cl-coverage-tools](https://github.com/cl-sdk/cl-coverage-tools/blob/main/extra/banner.png?raw=true "cl-coverage-tools")
 
 `cl-coverage-tools` is a Common Lisp library that provides utilities to build and integrate coverage analysis tools.
 It is designed as a foundation for higher-level coverage reporting systems.
