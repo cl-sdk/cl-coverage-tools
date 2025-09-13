@@ -113,7 +113,6 @@
          result)
     ;; calculate locations
     (dolist (record coverage-data)
-      (print record)
       (destructuring-bind (kind executed form-index form-path)
           record
         (handler-case
