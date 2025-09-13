@@ -66,7 +66,7 @@
   (let ((group-by (make-hash-table :test 'equal)))
     (loop for record in records
           for form-data = (car record)
-          for executed = (cadr record)
+          for executed = (cdr record)
           if (member (caar record) '(:then :else))
             do (destructuring-bind (kind &rest rest)
                    form-data
@@ -75,7 +75,7 @@
                     (gethash form-path group-by)
                     (push (list
                            kind
-                           (if executed 1 2)
+                           executed
                            (alexandria:lastcar rest)
                            form-path)
                           (gethash form-path group-by)))))
@@ -84,7 +84,7 @@
                  (setf
                   (gethash form-path group-by)
                   (push (list :expression
-                              (if executed 1 2)
+                              executed
                               (alexandria:lastcar form-data)
                               form-path)
                         (gethash form-data group-by))))
