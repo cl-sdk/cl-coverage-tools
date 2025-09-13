@@ -6,7 +6,8 @@
   :license  "Unlicense"
   :version "0.0.1"
   :serial t
-  :depends-on (#:closer-mop
+  :depends-on (#:alexandria
+               #:closer-mop
                #+sbcl sb-cover)
   :components ((:file "package")
                (:file "cl-coverage-tools")))
