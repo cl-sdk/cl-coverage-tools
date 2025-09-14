@@ -52,6 +52,16 @@ Or include it in your project via [Quicklisp](https://www.quicklisp.org/) once i
 (cl-coverage-reporter.cli:report systems)
 ```
 
+### COV Reporter
+
+The cov reporter write a file with an `.cov` extension next to the actual file. This file can be loaded by an emacs plug-in to show all the lines been covered.
+
+```lisp
+(asdf:load-system "cl-coverage-reporter.cov")
+
+(cl-coverage-reporter.cov:report systems)
+```
+
 ## License
 
 This project is licensed under the [Unlicense](https://unlicense.org/).
