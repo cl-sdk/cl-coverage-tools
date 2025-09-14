@@ -42,6 +42,16 @@ Clone this repository and load it with [ASDF](https://common-lisp.net/project/as
 
 Or include it in your project via [Quicklisp](https://www.quicklisp.org/) once it’s available there.
 
+## Reporters available
+
+### CLI Reporter
+
+```lisp
+(asdf:load-system "cl-coverage-reporter.cli")
+
+(cl-coverage-reporter.cli:report systems)
+```
+
 ## License
 
 This project is licensed under the [Unlicense](https://unlicense.org/).
