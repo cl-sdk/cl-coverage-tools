@@ -1,6 +1,6 @@
 (asdf:defsystem #:cl-coverage-reporter.cov
   :author "Bruno Dias"
-  :version "0.0.1"
+  :version "1.0.0"
   :serial t
   :depends-on (#:cl-ascii-table
                #+sbcl sb-cover

@@ -4,7 +4,7 @@
   :description "Tools to help build coverage tools."
   :author "Bruno Dias"
   :license  "Unlicense"
-  :version "0.0.3"
+  :version "1.0.0"
   :serial t
   :depends-on (#:alexandria
                #:closer-mop
