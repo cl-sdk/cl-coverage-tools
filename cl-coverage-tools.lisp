@@ -8,6 +8,13 @@
                 (declaim (optimize sb-cover:store-coverage-data)))
   #-sbcl (warn "not implemented"))
 
+(defun disable-coverage ()
+  "Disable coverage.
+ NOTE: It's sbcl-only for now."
+  #+sbcl (progn t
+                (declaim (optimize (sb-cover:store-coverage-data 0))))
+  #-sbcl (warn "not implemented"))
+
 (defun coverage-data ()
   "Return the coverage data collected by `sb-cover`.
 

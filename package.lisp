@@ -4,6 +4,7 @@
   (:use #:cl #:sb-c)
   (:export
    #:enable-coverage
+   #:disable-coverage
    #:coverage-data
    #:source-map-from-source
    #:normalize-coverage-data
