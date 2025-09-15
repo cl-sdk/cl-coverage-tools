@@ -5,6 +5,9 @@
 
 (in-package :cl-coverage-reporter.cli)
 
+(defparameter *filename-length* 40
+  "Limit the length of the displayed file name.")
+
 (defun system-files (system-designator)
   "Return a list of pathname objects for all files in SYSTEM-DESIGNATOR."
   (let* ((sys (asdf:find-system system-designator))
@@ -49,11 +52,18 @@
                                            (cl-coverage-tools:process-coverage-data
                                             pkg
                                             filename))))
-                               (ascii-table:add-row table (list filename
-                                                                (getf data :branch-hit)
-                                                                (getf data :expression-hit)
-                                                                (getf data :branch-missed)
-                                                                (getf data :expression-missed))))))))
+                               (let ((name (if (>= (length filename) *filename-length*)
+                                               (concatenate 'string
+                                                            "..."
+                                                           (subseq filename
+                                                                   (- (length filename) *filename-length*)
+                                                                   (length filename)))
+                                               filename)))
+                                 (ascii-table:add-row table (list name
+                                                             (getf data :branch-hit)
+                                                             (getf data :expression-hit)
+                                                             (getf data :branch-missed)
+                                                             (getf data :expression-missed)))))))))
     (let* ((table (ascii-table:make-table
                    '("File" "Branches" "Expressions" "Branches missed"  "Expressions missed")
                    :header "Coverage"))
